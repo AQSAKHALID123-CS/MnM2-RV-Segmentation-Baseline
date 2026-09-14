@@ -1,0 +1,15 @@
+# M&Ms-2 RV Segmentation - Validation Inference
+
+# Environment
+conda activate mnm2_clean
+
+# nnU-Net paths
+set nnUNet_raw=F:\nnUNet_raw
+set nnUNet_preprocessed=F:\nnUNet_preprocessed
+set nnUNet_results=F:\nnUNet_results
+
+# Limit data augmentation workers
+set nnUNet_n_proc_DA=1
+
+# Run inference on the independent patient-level validation set
+nnUNetv2_predict -i F:\MnM2_Validation\imagesTs -o F:\MnM2_Validation\predictions -d 701 -c 3d_fullres -f 0 -chk checkpoint_best.pth

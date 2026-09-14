@@ -1,0 +1,11 @@
+Python==3.11
+PyTorch==2.6.0
+nnunetv2
+numpy
+pandas
+nibabel
+SimpleITK
+scipy
+scikit-image
+matplotlib
+Pillow

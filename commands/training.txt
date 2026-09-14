@@ -1,0 +1,18 @@
+# M&Ms-2 RV Segmentation - nnU-Net v2 Baseline Training
+
+# Environment
+conda activate mnm2_clean
+
+# nnU-Net paths
+set nnUNet_raw=F:\nnUNet_raw
+set nnUNet_preprocessed=F:\nnUNet_preprocessed
+set nnUNet_results=F:\nnUNet_results
+
+# Limit data augmentation workers for reproducibility/stability
+set nnUNet_n_proc_DA=1
+
+# Dataset integrity verification and preprocessing
+nnUNetv2_plan_and_preprocess -d 701 --verify_dataset_integrity
+
+# Train 3D full-resolution nnU-Net, Fold 0
+nnUNetv2_train 701 3d_fullres 0 --npz --c
